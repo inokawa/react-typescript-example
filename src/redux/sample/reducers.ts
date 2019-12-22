@@ -3,10 +3,12 @@ import { Actions } from './actions';
 
 type State = {
   data: string;
+  error: Error | null;
 };
 
 const initialState: State = {
-  data: ''
+  data: '',
+  error: null
 };
 
 const reducer = (state: State = initialState, action: Actions): State => {
@@ -14,9 +16,16 @@ const reducer = (state: State = initialState, action: Actions): State => {
     case SAMPLE_FETCH_REQUEST:
       return { ...state };
     case SAMPLE_FETCH_SUCCEED:
-      return { ...state, data: action.payload.data };
+      return {
+        ...state,
+        data: action.payload.data,
+        error: null
+      };
     case SAMPLE_FETCH_FAILED:
-      return { ...state };
+      return {
+        ...state,
+        error: action.payload.error
+      };
     default:
       return { ...state };
   }
