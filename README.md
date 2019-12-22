@@ -4,6 +4,6 @@
 
 設計検討用
 
-- React Component 設計
+- React Component 設計 (TODO)
 - Redux 設計
 - Typing
