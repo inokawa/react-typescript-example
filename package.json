@@ -23,6 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "typecheck": "tsc --project .",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
