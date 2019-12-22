@@ -3,5 +3,5 @@ import { sampleFetchRequest, sampleFetchSucceed, } from './actions';
 
 export const fetchSample = (): Operation => async dispatch => {
     dispatch(sampleFetchRequest());
-    dispatch(sampleFetchSucceed());
+    dispatch(sampleFetchSucceed('test'));
 };
