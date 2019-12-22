@@ -1,7 +1,11 @@
 import { Operation } from '../types';
-import { sampleFetchRequest, sampleFetchSucceed, } from './actions';
+import { sampleFetchRequest, sampleFetchSucceed, sampleFetchFailed, } from './actions';
 
 export const fetchSample = (): Operation => async dispatch => {
-    dispatch(sampleFetchRequest());
-    dispatch(sampleFetchSucceed('test'));
+    try {
+        dispatch(sampleFetchRequest());
+        dispatch(sampleFetchSucceed('test'));
+    } catch (e) {
+        dispatch(sampleFetchFailed(e));
+    }
 };
