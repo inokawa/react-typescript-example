@@ -5,10 +5,12 @@ import thunk from 'redux-thunk';
 import rootReducer from './redux/rootReducer';
 import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const App: React.FC = () => {
+  const onClick = React.useCallback(() => alert('clicked'), []);
   return (
     <Provider store={store}>
       <div className="App">
@@ -25,6 +27,7 @@ const App: React.FC = () => {
           >
             Learn React
         </a>
+          <Button onClick={onClick} title="alert" />
         </header>
       </div>
     </Provider>
