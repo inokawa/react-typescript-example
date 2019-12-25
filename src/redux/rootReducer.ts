@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux'
 import sample from './sample/reducers';
-import form from './ui/form/reducers';
+import ui from './ui/reducers';
 
 const reducer = combineReducers({
   sample,
-  ui: combineReducers({
-    form
-  })
+  ui
 });
 
 export default reducer;
