@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../logo.svg';
 import Button from '../components/Button';
 import { useSelector, useDispatch } from 'react-redux';
-import { getData } from '../redux/sample/selector';
+import { getData } from '../redux/sample/selectors';
 import { fetchSample } from '../redux/sample/operations';
 
 const Page: React.FC = () => {
