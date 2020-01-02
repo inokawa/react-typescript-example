@@ -1,10 +1,10 @@
 import { SAMPLE_FETCH_REQUEST, SAMPLE_FETCH_SUCCEED, SAMPLE_FETCH_FAILED } from './types';
 import { Actions } from './actions';
 
-type State = {
+type State = Readonly<{
   data: string;
   error: Error | null;
-};
+}>;
 
 const initialState: State = {
   data: '',
