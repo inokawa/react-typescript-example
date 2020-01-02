@@ -1,9 +1,9 @@
 import { SET_ON, SET_OFF } from './types';
 import { Actions } from './actions';
 
-type State = {
+type State = Readonly<{
   isChecked: boolean;
-};
+}>;
 
 const initialState: State = {
   isChecked: false
