@@ -1,3 +1,9 @@
 import { AppState } from '../types';
+import { createSelector } from 'reselect';
 
-export const getData = (state: AppState): string => state.sample.data;
+export const getSample = (state: AppState) => state.sample;
+
+export const getData = createSelector(
+  getSample,
+  (sample): string => sample.data
+);
