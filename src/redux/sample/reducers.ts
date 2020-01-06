@@ -1,3 +1,4 @@
+import { Reducer } from 'redux';
 import { SAMPLE_FETCH_REQUEST, SAMPLE_FETCH_SUCCEED, SAMPLE_FETCH_FAILED } from './types';
 import { Actions } from './actions';
 
@@ -11,7 +12,7 @@ const initialState: State = {
   error: null
 };
 
-const reducer = (state: State = initialState, action: Actions): State => {
+const reducer: Reducer<State, Actions> = (state = initialState, action) => {
   switch (action.type) {
     case SAMPLE_FETCH_REQUEST:
       return { ...state };

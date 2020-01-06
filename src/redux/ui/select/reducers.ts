@@ -1,3 +1,4 @@
+import { Reducer } from 'redux';
 import { SET_ON, SET_OFF } from './types';
 import { Actions } from './actions';
 
@@ -9,7 +10,7 @@ const initialState: State = {
   isChecked: false
 };
 
-const reducer = (state: State = initialState, action: Actions): State => {
+const reducer: Reducer<State, Actions> = (state = initialState, action) => {
   switch (action.type) {
     case SET_ON:
       return {
