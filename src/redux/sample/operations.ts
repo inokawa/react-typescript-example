@@ -1,4 +1,4 @@
-import { Operation } from '../types';
+import { Operation } from '..';
 import { sampleFetchRequest, sampleFetchSucceed, sampleFetchFailed, } from './actions';
 
 export const fetchSample = (): Operation => async dispatch => {
