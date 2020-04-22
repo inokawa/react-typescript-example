@@ -6,6 +6,7 @@ const common = {
     new HtmlWebpackPlugin({
       inject: true,
       template: path.join(__dirname, "public", "index.html"),
+      favicon: path.join(__dirname, "public", "favicon.ico"),
     }),
   ],
   entry: "./src",
