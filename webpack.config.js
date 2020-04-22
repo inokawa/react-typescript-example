@@ -1,11 +1,17 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 const common = {
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(__dirname, "public", "index.html"),
+    }),
+  ],
   entry: "./src",
   output: {
     path: path.join(__dirname, "build"),
     filename: "bundle.js",
-    publicPath: "/build",
   },
   module: {
     rules: [
@@ -38,7 +44,7 @@ const common = {
 const dev = {
   mode: "development",
   devServer: {
-    contentBase: path.join(__dirname, "public"),
+    contentBase: path.join(__dirname, "build"),
     compress: true,
     port: 9000,
     historyApiFallback: true,
