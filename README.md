@@ -1,4 +1,4 @@
-# react-redux-typescript-example
+# react-typescript-example
 
 設計検討用
 
