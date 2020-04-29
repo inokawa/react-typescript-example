@@ -8,6 +8,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -21,5 +23,6 @@ module.exports = {
   rules: {
     semi: ["error", "always"],
     indent: ["error", 2],
+    "react/prop-types": "off",
   },
 };
