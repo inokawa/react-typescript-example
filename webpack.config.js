@@ -56,7 +56,7 @@ const prod = {
   mode: "production",
 };
 
-module.exports = function (env, argv) {
+module.exports = function () {
   if (process.env.NODE_ENV === "production") {
     return { ...common, ...prod };
   } else {
