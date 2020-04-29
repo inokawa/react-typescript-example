@@ -1,5 +1,5 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 const common = {
   plugins: [
@@ -56,7 +56,7 @@ const prod = {
   mode: "production",
 };
 
-module.exports = function (env, argv) {
+module.exports = function () {
   if (process.env.NODE_ENV === "production") {
     return { ...common, ...prod };
   } else {

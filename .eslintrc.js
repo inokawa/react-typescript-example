@@ -4,14 +4,7 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-  ],
-  parser: "@typescript-eslint/parser",
+  extends: ["eslint:recommended"],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
@@ -19,10 +12,26 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ["@typescript-eslint"],
   rules: {
     semi: ["error", "always"],
     indent: ["error", 2],
-    "react/prop-types": "off",
   },
+  overrides: [
+    {
+      files: ["**/*.{ts,tsx}"],
+      extends: [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+      ],
+      parser: "@typescript-eslint/parser",
+      plugins: ["@typescript-eslint"],
+    },
+    {
+      files: ["**/*.{jsx,tsx}"],
+      extends: ["plugin:react/recommended", "plugin:react-hooks/recommended"],
+      rules: {
+        "react/prop-types": "off",
+      },
+    },
+  ],
 };
