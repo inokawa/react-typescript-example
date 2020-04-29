@@ -18,6 +18,8 @@
     "reselect": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.9.1",
     "@types/react": "^16.9.23",
@@ -25,6 +27,7 @@
     "@types/react-redux": "^7.1.7",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
+    "babel-jest": "^25.5.1",
     "css-loader": "^3.5.2",
     "eslint": "^6.8.0",
     "eslint-plugin-jest": "^23.8.2",
