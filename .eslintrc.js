@@ -33,5 +33,13 @@ module.exports = {
         "react/prop-types": "off",
       },
     },
+    {
+      files: ["**/*.{spec,test}.{js,ts,jsx,tsx}"],
+      extends: ["plugin:jest/recommended"],
+      plugins: ["jest"],
+      env: {
+        "jest/globals": true,
+      },
+    },
   ],
 };
