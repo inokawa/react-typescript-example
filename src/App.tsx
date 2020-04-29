@@ -12,6 +12,6 @@ const App: React.FC = () => {
       <Main />
     </Provider>
   );
-}
+};
 
 export default App;

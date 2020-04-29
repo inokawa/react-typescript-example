@@ -16,7 +16,7 @@ const Page: React.FC = () => {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
-          </p>
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -24,13 +24,13 @@ const Page: React.FC = () => {
           rel="noopener noreferrer"
         >
           Learn React
-          </a>
+        </a>
         <Button onClick={onClick} title="alert" />
         <div>{!data ? 'nodata' : data}</div>
         <Button onClick={doDispatch} title="dispatch" />
       </header>
     </div>
   );
-}
+};
 
 export default Page;

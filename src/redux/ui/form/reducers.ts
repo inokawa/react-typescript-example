@@ -12,18 +12,18 @@ const initialState: State = {
 
 const reducer: Reducer<State, Actions> = (state = initialState, action) => {
   switch (action.type) {
-    case SET_ON:
-      return {
-        ...state,
-        isChecked: action.payload.data
-      };
-    case SET_OFF:
-      return {
-        ...state,
-        isChecked: action.payload.data
-      };
-    default:
-      return { ...state };
+  case SET_ON:
+    return {
+      ...state,
+      isChecked: action.payload.data
+    };
+  case SET_OFF:
+    return {
+      ...state,
+      isChecked: action.payload.data
+    };
+  default:
+    return { ...state };
   }
 };
 
