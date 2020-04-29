@@ -14,21 +14,21 @@ const initialState: State = {
 
 const reducer: Reducer<State, Actions> = (state = initialState, action) => {
   switch (action.type) {
-    case SAMPLE_FETCH_REQUEST:
-      return { ...state };
-    case SAMPLE_FETCH_SUCCEED:
-      return {
-        ...state,
-        data: action.payload.data,
-        error: null
-      };
-    case SAMPLE_FETCH_FAILED:
-      return {
-        ...state,
-        error: action.payload.error
-      };
-    default:
-      return { ...state };
+  case SAMPLE_FETCH_REQUEST:
+    return { ...state };
+  case SAMPLE_FETCH_SUCCEED:
+    return {
+      ...state,
+      data: action.payload.data,
+      error: null
+    };
+  case SAMPLE_FETCH_FAILED:
+    return {
+      ...state,
+      error: action.payload.error
+    };
+  default:
+    return { ...state };
   }
 };
 
