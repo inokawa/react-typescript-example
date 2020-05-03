@@ -7,3 +7,5 @@
 - React Component 設計
 - Redux 設計
 - Typing
+- 環境構築周り
+- etc
