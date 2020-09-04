@@ -7,7 +7,7 @@
     "build": "webpack --mode=production",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "typecheck": "tsc --project . --noEmit"
+    "tsc": "tsc --project . --noEmit"
   },
   "dependencies": {
     "react": "^16.13.0",
