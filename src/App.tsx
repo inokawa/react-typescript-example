@@ -1,15 +1,19 @@
 import React from "react";
 import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import "./App.css";
-import Main from "./pages/Main";
 import { configureStore } from "./redux";
+import { Routes } from "./Routes";
 
 const store = configureStore();
 
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <Main />
+      <Router>
+        <Routes />
+      </Router>
     </Provider>
   );
 };
