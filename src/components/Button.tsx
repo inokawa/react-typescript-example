@@ -1,8 +1,12 @@
 import React from "react";
 
-const component: React.FC<{
+type Props = {
   title: string;
   onClick: () => void;
-}> = ({ title, onClick }) => <button onClick={onClick}>{title}</button>;
+};
 
-export default component;
+const Component = ({ title, onClick }: Props) => (
+  <button onClick={onClick}>{title}</button>
+);
+
+export default Component;
