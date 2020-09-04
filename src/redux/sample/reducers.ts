@@ -1,10 +1,13 @@
 import { Reducer } from "redux";
+import { ActionUnion } from "../";
 import {
   SAMPLE_FETCH_REQUEST,
   SAMPLE_FETCH_SUCCEED,
   SAMPLE_FETCH_FAILED,
 } from "./types";
-import { Actions } from "./actions";
+import * as actions from "./actions";
+
+type Actions = ActionUnion<typeof actions>;
 
 type State = Readonly<{
   data: string;

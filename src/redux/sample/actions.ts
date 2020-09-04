@@ -16,9 +16,3 @@ export const sampleFetchFailed = (error: Error) => ({
   type: SAMPLE_FETCH_FAILED,
   payload: { error },
 });
-
-export type Actions = ReturnType<
-  | typeof sampleFetchRequest
-  | typeof sampleFetchSucceed
-  | typeof sampleFetchFailed
->;
