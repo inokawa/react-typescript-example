@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
-import form from './form/reducers';
-import select from './select/reducers';
+import { combineReducers } from "redux";
+import form from "./form/reducers";
+import select from "./select/reducers";
 
 const reducer = combineReducers({
   form,
-  select
+  select,
 });
 
 export default reducer;

@@ -1,10 +1,14 @@
-import { Operation } from '..';
-import { sampleFetchRequest, sampleFetchSucceed, sampleFetchFailed, } from './actions';
+import { Operation } from "..";
+import {
+  sampleFetchRequest,
+  sampleFetchSucceed,
+  sampleFetchFailed,
+} from "./actions";
 
-export const fetchSample = (): Operation => async dispatch => {
+export const fetchSample = (): Operation => async (dispatch) => {
   try {
     dispatch(sampleFetchRequest());
-    dispatch(sampleFetchSucceed('test'));
+    dispatch(sampleFetchSucceed("test"));
   } catch (e) {
     dispatch(sampleFetchFailed(e));
   }

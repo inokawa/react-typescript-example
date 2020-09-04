@@ -1,6 +1,10 @@
-import { Reducer } from 'redux';
-import { SAMPLE_FETCH_REQUEST, SAMPLE_FETCH_SUCCEED, SAMPLE_FETCH_FAILED } from './types';
-import { Actions } from './actions';
+import { Reducer } from "redux";
+import {
+  SAMPLE_FETCH_REQUEST,
+  SAMPLE_FETCH_SUCCEED,
+  SAMPLE_FETCH_FAILED,
+} from "./types";
+import { Actions } from "./actions";
 
 type State = Readonly<{
   data: string;
@@ -8,8 +12,8 @@ type State = Readonly<{
 }>;
 
 const initialState: State = {
-  data: '',
-  error: null
+  data: "",
+  error: null,
 };
 
 const reducer: Reducer<State, Actions> = (state = initialState, action) => {
@@ -20,12 +24,12 @@ const reducer: Reducer<State, Actions> = (state = initialState, action) => {
     return {
       ...state,
       data: action.payload.data,
-      error: null
+      error: null,
     };
   case SAMPLE_FETCH_FAILED:
     return {
       ...state,
-      error: action.payload.error
+      error: action.payload.error,
     };
   default:
     return { ...state };

@@ -1,15 +1,17 @@
-import React from 'react';
-import logo from '../logo.svg';
-import Button from '../components/Button';
-import { useSelector, useDispatch } from 'react-redux';
-import { getData } from '../redux/sample/selectors';
-import { fetchSample } from '../redux/sample/operations';
+import React from "react";
+import logo from "../logo.svg";
+import Button from "../components/Button";
+import { useSelector, useDispatch } from "react-redux";
+import { getData } from "../redux/sample/selectors";
+import { fetchSample } from "../redux/sample/operations";
 
 const Page: React.FC = () => {
   const dispatch = useDispatch();
   const data = useSelector(getData);
-  const onClick = React.useCallback(() => alert('clicked'), []);
-  const doDispatch = React.useCallback(() => dispatch(fetchSample()), [dispatch]);
+  const onClick = React.useCallback(() => alert("clicked"), []);
+  const doDispatch = React.useCallback(() => dispatch(fetchSample()), [
+    dispatch,
+  ]);
   return (
     <div className="App">
       <header className="App-header">
@@ -26,7 +28,7 @@ const Page: React.FC = () => {
           Learn React
         </a>
         <Button onClick={onClick} title="alert" />
-        <div>{!data ? 'nodata' : data}</div>
+        <div>{!data ? "nodata" : data}</div>
         <Button onClick={doDispatch} title="dispatch" />
       </header>
     </div>

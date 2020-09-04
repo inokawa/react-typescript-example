@@ -1,8 +1,8 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import './App.css';
-import Main from './pages/Main';
-import { configureStore } from './redux';
+import React from "react";
+import { Provider } from "react-redux";
+import "./App.css";
+import Main from "./pages/Main";
+import { configureStore } from "./redux";
 
 const store = configureStore();
 

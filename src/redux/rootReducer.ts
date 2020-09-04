@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
-import sample from './sample/reducers';
-import ui from './ui/reducers';
+import { combineReducers } from "redux";
+import sample from "./sample/reducers";
+import ui from "./ui/reducers";
 
 const reducer = combineReducers({
   sample,
-  ui
+  ui,
 });
 
 export default reducer;

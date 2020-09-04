@@ -1,5 +1,5 @@
-import { AppState } from '..';
-import { createSelector } from 'reselect';
+import { AppState } from "..";
+import { createSelector } from "reselect";
 
 export const getSample = (state: AppState) => state.sample;
 
