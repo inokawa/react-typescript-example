@@ -20,7 +20,7 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <Wrapper>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Routes />
         </Router>
       </Wrapper>
