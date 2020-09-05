@@ -1,3 +1,0 @@
-export const SAMPLE_FETCH_REQUEST = "SAMPLE_FETCH_REQUEST" as const;
-export const SAMPLE_FETCH_SUCCEED = "SAMPLE_FETCH_SUCCEED" as const;
-export const SAMPLE_FETCH_FAILED = "SAMPLE_FETCH_FAILED" as const;
