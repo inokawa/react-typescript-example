@@ -1,19 +1,14 @@
 import React from "react";
 import logo from "../logo.svg";
-import Button from "../components/Button";
-import { useSelector, useDispatch } from "react-redux";
-import { getData } from "../redux/sample/selectors";
-import { fetchSample } from "../redux/sample/operations";
+
+const style: React.CSSProperties = {
+  flex: 1,
+  textAlign: "center",
+};
 
 const Page: React.FC = () => {
-  const dispatch = useDispatch();
-  const data = useSelector(getData);
-  const onClick = React.useCallback(() => alert("clicked"), []);
-  const doDispatch = React.useCallback(() => dispatch(fetchSample()), [
-    dispatch,
-  ]);
   return (
-    <div className="App">
+    <div style={style}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -27,9 +22,6 @@ const Page: React.FC = () => {
         >
           Learn React
         </a>
-        <Button onClick={onClick} title="alert" />
-        <div>{!data ? "nodata" : data}</div>
-        <Button onClick={doDispatch} title="dispatch" />
       </header>
     </div>
   );
