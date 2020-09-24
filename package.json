@@ -1,7 +1,7 @@
 {
   "name": "react-typescript-example",
   "version": "0.1.0",
-  "homepage": "https://n-inokawa.github.io/react-typescript-example/",
+  "homepage": "https://inokawa.github.io/react-typescript-example/",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode=development",
