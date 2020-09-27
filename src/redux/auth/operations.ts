@@ -12,7 +12,7 @@ const dummySignInApi = (request: {
   });
 };
 
-const dummySignOutApi = (request: {}): Promise<void> => {
+const dummySignOutApi = (request: any): Promise<void> => {
   return new Promise((res, rej) => {
     setTimeout(() => {
       res();
