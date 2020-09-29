@@ -43,7 +43,7 @@ const common = {
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"],
+    extensions: [".ts", ".tsx", ".js", ".json", ".mjs", ".wasm"],
   },
 };
 
