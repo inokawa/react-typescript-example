@@ -1,25 +1,26 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { css } from "emotion";
 import { useFormik } from "formik";
 import Button from "../components/Button";
 import Form from "../components/Form";
 import { signIn } from "../redux/auth/operations";
 import { ROUTES } from "../routes/";
 
-const wrapperStyle: React.CSSProperties = {
-  display: "flex",
-  width: "100vw",
-  height: "100vh",
-  alignItems: "center",
-  justifyContent: "center",
-};
+const wrapperStyle = css`
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+`;
 
-const style: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  width: "300px",
-};
+const style = css`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+`;
 
 const Page: React.FC = () => {
   const history = useHistory();
@@ -38,8 +39,8 @@ const Page: React.FC = () => {
     },
   });
   return (
-    <div style={wrapperStyle}>
-      <div style={style}>
+    <div className={wrapperStyle}>
+      <div className={style}>
         <Form
           label="name"
           name="name"

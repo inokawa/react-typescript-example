@@ -1,14 +1,15 @@
 import React from "react";
+import { css } from "emotion";
 import logo from "../logo.svg";
 
-const style: React.CSSProperties = {
-  flex: 1,
-  textAlign: "center",
-};
+const style = css`
+  flex: 1;
+  text-align: center;
+`;
 
 const Page: React.FC = () => {
   return (
-    <div style={style}>
+    <div className={style}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

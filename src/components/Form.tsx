@@ -1,4 +1,5 @@
 import React from "react";
+import { css } from "emotion";
 
 type Props = {
   label: string;
@@ -8,14 +9,22 @@ type Props = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const style = { display: "flex", flex: 1, alignItems: "center" };
-const inputStyle = { flex: 1, margin: "10px" };
+const style = css`
+  display: flex;
+  flex: 1;
+  align-items: center;
+`;
+
+const inputStyle = css`
+  flex: 1;
+  margin: 10px;
+`;
 
 const Component = ({ label, name, type, value, onChange }: Props) => (
-  <div style={style}>
+  <div className={style}>
     <label htmlFor={name}>{label}</label>
     <input
-      style={inputStyle}
+      className={inputStyle}
       name={name}
       type={type}
       onChange={onChange}

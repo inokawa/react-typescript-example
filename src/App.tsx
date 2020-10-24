@@ -1,6 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
+import { css } from "emotion";
 
 import "./App.css";
 import { configureStore } from "./redux";
@@ -8,12 +9,12 @@ import { Routes } from "./routes/Routes";
 
 const store = configureStore();
 
-const style = {
-  display: "flex",
-};
+const style = css`
+  display: flex;
+`;
 
 const Wrapper = (props: { children: React.ReactNode }) => {
-  return <div style={style}>{props.children}</div>;
+  return <div className={style}>{props.children}</div>;
 };
 
 const App: React.FC = () => {
