@@ -11,7 +11,7 @@
     "tsc": "tsc -p . --noEmit"
   },
   "dependencies": {
-    "emotion": "11.0.0",
+    "@emotion/css": "11.0.0",
     "formik": "2.2.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
