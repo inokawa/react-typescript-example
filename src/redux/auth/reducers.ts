@@ -1,5 +1,5 @@
 import { Reducer } from "redux";
-import { ActionUnion } from "../";
+import { ActionUnion } from "../types";
 import * as types from "./types";
 import * as actions from "./actions";
 

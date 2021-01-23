@@ -1,4 +1,4 @@
-import { AppState } from "..";
+import { AppState } from "../types";
 import { createSelector } from "reselect";
 
 export const getAuth = (state: AppState) => state.auth;

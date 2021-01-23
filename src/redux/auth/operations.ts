@@ -1,4 +1,4 @@
-import { Operation } from "..";
+import { Operation } from "../types";
 import * as actions from "./actions";
 
 const dummySignInApi = (request: {
