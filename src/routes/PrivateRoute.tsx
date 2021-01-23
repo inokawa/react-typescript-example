@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Route, Redirect, RouteProps, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { ROUTES } from ".";
@@ -10,7 +10,7 @@ export const PrivateRoute = ({ children, ...rest }: RouteProps) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const isAuthed = useSelector(authSelectors.isAuthed);
-  const items = React.useMemo(
+  const items = useMemo(
     () => [
       {
         title: "Home",
