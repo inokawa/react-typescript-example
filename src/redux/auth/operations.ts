@@ -1,4 +1,4 @@
-import { Operation } from "../types";
+import { AppThunk } from "../types";
 import * as actions from "./actions";
 
 const dummySignInApi = (request: {
@@ -24,7 +24,7 @@ export const signIn = (
   name: string,
   password: string,
   onSuccess: () => void
-): Operation => async (dispatch) => {
+): AppThunk => async (dispatch) => {
   try {
     dispatch(actions.signInRequest());
     const token = await dummySignInApi({ name, password });
@@ -35,7 +35,7 @@ export const signIn = (
   }
 };
 
-export const signOut = (onSuccess: () => void): Operation => async (
+export const signOut = (onSuccess: () => void): AppThunk => async (
   dispatch
 ) => {
   try {

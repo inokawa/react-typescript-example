@@ -5,6 +5,8 @@ import configureStore from "./configureStore";
 
 export type AppState = ReturnType<typeof reducer>;
 
+export type AppAction = Parameters<typeof reducer>[1];
+
 export type AppDispatch = ReturnType<typeof configureStore>["dispatch"];
 
 export type ActionUnion<
@@ -13,4 +15,4 @@ export type ActionUnion<
   }
 > = ReturnType<A[keyof A]>;
 
-export type Operation = ThunkAction<void, AppState, null, AnyAction>;
+export type AppThunk = ThunkAction<void, AppState, null, AnyAction>;
