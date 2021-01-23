@@ -22,7 +22,7 @@ const style = css`
   width: 300px;
 `;
 
-const Page: React.FC = () => {
+const Page = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const formik = useFormik({

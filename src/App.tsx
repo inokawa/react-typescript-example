@@ -17,7 +17,7 @@ const Wrapper = (props: { children: React.ReactNode }) => {
   return <div className={style}>{props.children}</div>;
 };
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Provider store={store}>
       <Wrapper>

@@ -7,7 +7,7 @@ const style = css`
   text-align: center;
 `;
 
-const Page: React.FC = () => {
+const Page = () => {
   return (
     <div className={style}>
       <header className="App-header">
