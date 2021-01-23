@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch } from "../redux";
 import { css } from "@emotion/css";
 import { useFormik } from "formik";
 import Button from "../components/Button";

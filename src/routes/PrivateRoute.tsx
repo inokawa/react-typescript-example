@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { Route, Redirect, RouteProps, useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "../redux";
 import { ROUTES } from ".";
 import * as authOperations from "../redux/auth/operations";
 import * as authSelectors from "../redux/auth/selectors";
