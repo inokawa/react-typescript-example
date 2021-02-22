@@ -4,7 +4,7 @@
   "homepage": "https://inokawa.github.io/react-typescript-example/",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --mode=development",
+    "start": "webpack-cli serve --mode=development",
     "build": "webpack --mode=production",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
