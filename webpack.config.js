@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const path = require("path");
 
 const common = {
@@ -7,6 +9,9 @@ const common = {
       inject: true,
       template: path.join(__dirname, "public", "index.html"),
       favicon: path.join(__dirname, "public", "favicon.ico"),
+    }),
+    new MiniCssExtractPlugin({
+      filename: "styles.css",
     }),
   ],
   entry: "./src",
@@ -17,17 +22,36 @@ const common = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: {
-          loader: "ts-loader",
-          options: {
-            transpileOnly: true,
+        test: /\.(jsx?|tsx?)$/,
+        use: [
+          { loader: "babel-loader" },
+          {
+            loader: "linaria/loader",
+            options: {
+              sourceMap: process.env.NODE_ENV !== "production",
+            },
           },
-        },
+          {
+            loader: "ts-loader",
+            options: {
+              transpileOnly: true,
+            },
+          },
+        ],
       },
       {
         test: /\.css/,
-        use: ["style-loader", "css-loader"],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: process.env.NODE_ENV !== "production",
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,

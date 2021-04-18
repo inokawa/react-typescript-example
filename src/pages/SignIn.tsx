@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "../redux";
-import { css } from "@emotion/css";
+import { css } from "linaria";
 import { useFormik } from "formik";
 import Button from "../components/Button";
 import Form from "../components/Form";
