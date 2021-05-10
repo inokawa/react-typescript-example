@@ -11,8 +11,8 @@
     "tsc": "tsc -p . --noEmit"
   },
   "dependencies": {
-    "linaria": "2.0.2",
     "formik": "2.2.6",
+    "linaria": "2.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-redux": "7.2.2",
@@ -47,7 +47,6 @@
     "mini-css-extract-plugin": "^1.3.9",
     "react-test-renderer": "17.0.1",
     "style-loader": "2.0.0",
-    "ts-loader": "8.0.14",
     "typescript": "4.1.3",
     "webpack": "5.20.1",
     "webpack-cli": "4.3.1",

@@ -31,12 +31,6 @@ const common = {
               sourceMap: process.env.NODE_ENV !== "production",
             },
           },
-          {
-            loader: "ts-loader",
-            options: {
-              transpileOnly: true,
-            },
-          },
         ],
       },
       {

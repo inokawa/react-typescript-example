@@ -8,8 +8,8 @@ module.exports = {
         },
       },
     ],
-    // "@babel/preset-typescript",
     "@babel/preset-react",
     "linaria/babel",
+    "@babel/preset-typescript",
   ],
 };
