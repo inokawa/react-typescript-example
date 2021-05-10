@@ -10,7 +10,6 @@ module.exports = {
       },
     ],
     "@babel/preset-react",
-    "linaria/babel",
     "@babel/preset-typescript",
   ],
 };
