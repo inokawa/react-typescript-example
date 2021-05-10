@@ -22,9 +22,15 @@ const common = {
   module: {
     rules: [
       {
-        test: /\.(jsx?|tsx?)$/,
+        test: /\.(jsx?|tsx?|mjs)$/,
+        exclude: [
+          /node_modules[\\/]core-js/,
+          /node_modules[\\/]webpack[\\/]buildin/,
+        ],
         use: [
-          { loader: "babel-loader" },
+          {
+            loader: "babel-loader",
+          },
           {
             loader: "linaria/loader",
             options: {
