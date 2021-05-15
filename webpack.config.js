@@ -30,6 +30,9 @@ const common = {
         use: [
           {
             loader: "babel-loader",
+            options: {
+              cacheDirectory: true,
+            },
           },
           {
             loader: "linaria/loader",
