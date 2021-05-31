@@ -39,7 +39,7 @@
     "babel-loader": "8.2.2",
     "css-loader": "5.2.6",
     "eslint": "7.24.0",
-    "eslint-plugin-jest": "24.3.5",
+    "eslint-plugin-jest": "24.3.6",
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
     "file-loader": "6.2.0",
