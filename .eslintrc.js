@@ -4,17 +4,13 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: ["eslint:recommended"],
+  extends: ["eslint:recommended", "prettier"],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
     ecmaFeatures: {
       jsx: true,
     },
-  },
-  rules: {
-    semi: ["error", "always"],
-    indent: ["error", 2],
   },
   settings: {
     react: {

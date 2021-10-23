@@ -17,20 +17,20 @@ const initialState: State = {
 
 const reducer: Reducer<State, Actions> = (state = initialState, action) => {
   switch (action.type) {
-  case types.AUTH_SIGN_IN_REQUEST:
-    return { ...state, error: null };
-  case types.AUTH_SIGN_IN_SUCCEED:
-    return { ...state, token: action.payload.token };
-  case types.AUTH_SIGN_IN_FAILED:
-    return { ...state, error: action.payload.error };
-  case types.AUTH_SIGN_OUT_REQUEST:
-    return { ...state, error: null };
-  case types.AUTH_SIGN_OUT_SUCCEED:
-    return { ...state, token: null };
-  case types.AUTH_SIGN_OUT_FAILED:
-    return { ...state, error: action.payload.error };
-  default:
-    return { ...state };
+    case types.AUTH_SIGN_IN_REQUEST:
+      return { ...state, error: null };
+    case types.AUTH_SIGN_IN_SUCCEED:
+      return { ...state, token: action.payload.token };
+    case types.AUTH_SIGN_IN_FAILED:
+      return { ...state, error: action.payload.error };
+    case types.AUTH_SIGN_OUT_REQUEST:
+      return { ...state, error: null };
+    case types.AUTH_SIGN_OUT_SUCCEED:
+      return { ...state, token: null };
+    case types.AUTH_SIGN_OUT_FAILED:
+      return { ...state, error: action.payload.error };
+    default:
+      return { ...state };
   }
 };
 

@@ -20,30 +20,28 @@ const dummySignOutApi = (request: any): Promise<void> => {
   });
 };
 
-export const signIn = (
-  name: string,
-  password: string,
-  onSuccess: () => void
-): AppThunk => async (dispatch) => {
-  try {
-    dispatch(actions.signInRequest());
-    const token = await dummySignInApi({ name, password });
-    dispatch(actions.signInSucceed(token));
-    onSuccess();
-  } catch (e) {
-    dispatch(actions.signInFailed(e));
-  }
-};
+export const signIn =
+  (name: string, password: string, onSuccess: () => void): AppThunk =>
+  async (dispatch) => {
+    try {
+      dispatch(actions.signInRequest());
+      const token = await dummySignInApi({ name, password });
+      dispatch(actions.signInSucceed(token));
+      onSuccess();
+    } catch (e) {
+      dispatch(actions.signInFailed(e));
+    }
+  };
 
-export const signOut = (onSuccess: () => void): AppThunk => async (
-  dispatch
-) => {
-  try {
-    dispatch(actions.signOutRequest());
-    await dummySignOutApi({});
-    dispatch(actions.signOutSuceed());
-    onSuccess();
-  } catch (e) {
-    dispatch(actions.signOutFailed(e));
-  }
-};
+export const signOut =
+  (onSuccess: () => void): AppThunk =>
+  async (dispatch) => {
+    try {
+      dispatch(actions.signOutRequest());
+      await dummySignOutApi({});
+      dispatch(actions.signOutSuceed());
+      onSuccess();
+    } catch (e) {
+      dispatch(actions.signOutFailed(e));
+    }
+  };
