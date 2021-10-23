@@ -29,7 +29,9 @@ export const signIn =
       dispatch(actions.signInSucceed(token));
       onSuccess();
     } catch (e) {
-      dispatch(actions.signInFailed(e));
+      if (e instanceof Error) {
+        dispatch(actions.signInFailed(e));
+      }
     }
   };
 
@@ -42,6 +44,8 @@ export const signOut =
       dispatch(actions.signOutSuceed());
       onSuccess();
     } catch (e) {
-      dispatch(actions.signOutFailed(e));
+      if (e instanceof Error) {
+        dispatch(actions.signOutFailed(e));
+      }
     }
   };
