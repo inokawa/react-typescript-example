@@ -27,6 +27,7 @@ jobs:
 
       - run: yarn install
       - run: yarn tsc
-      - run: yarn lint
+      - run: yarn lint:ci
+      - run: yarn format:ci
       - run: yarn test
       - run: yarn build

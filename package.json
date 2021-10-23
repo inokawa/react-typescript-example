@@ -8,7 +8,9 @@
     "build": "webpack --mode=production",
     "test": "jest",
     "lint": "eslint . --cache --ext .js,.jsx,.ts,.tsx",
+    "lint:ci": "eslint . --ext .js,.jsx,.ts,.tsx",
     "format": "prettier '**/*.{js,jsx,ts,tsx}' --write",
+    "format:ci": "prettier '**/*.{js,jsx,ts,tsx}' --list-different",
     "tsc": "tsc -p . --noEmit"
   },
   "dependencies": {
