@@ -78,8 +78,9 @@ const dev = {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
-    contentBase: path.join(__dirname, "build"),
-    compress: true,
+    static: {
+      directory: path.join(__dirname, "build"),
+    },
     port: 9000,
     historyApiFallback: true,
   },
