@@ -7,7 +7,7 @@
     "start": "webpack-cli serve --mode=development",
     "build": "webpack --mode=production",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --cache --ext .js,.jsx,.ts,.tsx",
     "tsc": "tsc -p . --noEmit"
   },
   "dependencies": {
