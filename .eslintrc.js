@@ -16,6 +16,11 @@ module.exports = {
     semi: ["error", "always"],
     indent: ["error", 2],
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   overrides: [
     {
       files: ["**/*.{ts,tsx}"],
@@ -31,6 +36,7 @@ module.exports = {
       extends: ["plugin:react/recommended", "plugin:react-hooks/recommended"],
       rules: {
         "react/prop-types": "off",
+        "react/display-name": "off",
       },
     },
     {
