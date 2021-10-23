@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { Route, Redirect, RouteProps, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "../redux";
 import { ROUTES } from ".";
-import * as authOperations from "../redux/auth/operations";
+import { signOut } from "../usecases/auth";
 import * as authSelectors from "../redux/auth/selectors";
 import SideNav from "../components/SideNav";
 
@@ -18,8 +18,9 @@ export const PrivateRoute = ({ children, ...rest }: RouteProps) => {
       },
       {
         title: "Sign out",
-        onClick: () =>
-          dispatch(authOperations.signOut(() => history.push(ROUTES.SIGN_IN))),
+        onClick: () => {
+          signOut(dispatch, () => history.push(ROUTES.SIGN_IN));
+        },
       },
     ],
     [history]

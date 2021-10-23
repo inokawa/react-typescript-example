@@ -5,7 +5,7 @@ import { css } from "linaria";
 import { useFormik } from "formik";
 import Button from "../components/Button";
 import Form from "../components/Form";
-import { signIn } from "../redux/auth/operations";
+import { signIn } from "../usecases/auth";
 import { ROUTES } from "../routes/";
 
 const wrapperStyle = css`
@@ -31,11 +31,9 @@ const Page = () => {
       password: "",
     },
     onSubmit: (values) => {
-      dispatch(
-        signIn(values.name, values.password, () => {
-          history.push(ROUTES.HOME);
-        })
-      );
+      signIn(dispatch, values.name, values.password, () => {
+        history.push(ROUTES.HOME);
+      });
     },
   });
   return (

@@ -1,13 +1,11 @@
-import { ThunkAction, ThunkDispatch } from "redux-thunk";
+import { Dispatch } from "redux";
 import reducer from "./rootReducer";
 
 export type AppState = ReturnType<typeof reducer>;
 
 export type AppAction = Parameters<typeof reducer>[1];
 
-export type AppDispatch = ThunkDispatch<AppState, null, AppAction>;
-
-export type AppThunk = ThunkAction<void, AppState, null, AppAction>;
+export type AppDispatch = Dispatch<AppAction>;
 
 export type ActionUnion<
   A extends {
