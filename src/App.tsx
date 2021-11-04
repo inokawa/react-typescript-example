@@ -5,7 +5,7 @@ import { css } from "linaria";
 
 import "./App.css";
 import { configureStore } from "./redux";
-import { Routes } from "./routes/Routes";
+import Routes from "./routes/Routes";
 
 const store = configureStore();
 

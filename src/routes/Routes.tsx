@@ -1,22 +1,16 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { ROUTES } from "./";
 import SignIn from "../pages/SignIn";
 import Main from "../pages/Main";
 import { PrivateRoute } from "./PrivateRoute";
 
-export const Routes = () => {
+export default () => {
   return (
-    <Switch>
-      <Route exact path={ROUTES.SIGN_IN}>
-        <SignIn />
-      </Route>
-      <PrivateRoute exact path={ROUTES.HOME}>
-        <Main />
-      </PrivateRoute>
-      <Route path="*">
-        <Redirect to={ROUTES.HOME} />
-      </Route>
-    </Switch>
+    <Routes>
+      <Route path={ROUTES.SIGN_IN} element={<SignIn />} />
+      <Route path={ROUTES.HOME} element={<PrivateRoute element={<Main />} />} />
+      <Route path="*" element={<Navigate to={ROUTES.HOME} replace />} />
+    </Routes>
   );
 };

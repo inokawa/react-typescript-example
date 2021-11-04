@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "../redux";
 import { css } from "linaria";
 import { useFormik } from "formik";
@@ -23,7 +23,7 @@ const style = css`
 `;
 
 const Page = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -32,7 +32,7 @@ const Page = () => {
     },
     onSubmit: (values) => {
       signIn(dispatch, values.name, values.password, () => {
-        history.push(ROUTES.HOME);
+        navigate(ROUTES.HOME);
       });
     },
   });

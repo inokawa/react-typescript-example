@@ -1,48 +1,40 @@
 import React, { useMemo } from "react";
-import { Route, Redirect, RouteProps, useHistory } from "react-router-dom";
+import { Route, Navigate, RouteProps, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "../redux";
 import { ROUTES } from ".";
 import { signOut } from "../usecases/auth";
 import * as authSelectors from "../redux/auth/selectors";
 import SideNav from "../components/SideNav";
 
-export const PrivateRoute = ({ children, ...rest }: RouteProps) => {
-  const history = useHistory();
+export const PrivateRoute = ({
+  element,
+}: {
+  element: RouteProps["element"];
+}) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const isAuthed = useSelector(authSelectors.isAuthed);
   const items = useMemo(
     () => [
       {
         title: "Home",
-        onClick: () => history.push(ROUTES.HOME),
+        onClick: () => navigate(ROUTES.HOME),
       },
       {
         title: "Sign out",
         onClick: () => {
-          signOut(dispatch, () => history.push(ROUTES.SIGN_IN));
+          signOut(dispatch, () => navigate(ROUTES.SIGN_IN));
         },
       },
     ],
-    [history]
+    [dispatch, navigate]
   );
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        isAuthed ? (
-          <>
-            <SideNav items={items} />
-            {children}
-          </>
-        ) : (
-          <Redirect
-            to={{
-              pathname: ROUTES.SIGN_IN,
-              state: { from: location },
-            }}
-          />
-        )
-      }
-    />
+  return isAuthed ? (
+    <>
+      <SideNav items={items} />
+      {element}
+    </>
+  ) : (
+    <Navigate to={ROUTES.SIGN_IN} state={{ from: location }} />
   );
 };
