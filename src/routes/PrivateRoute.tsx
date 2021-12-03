@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
-import { Route, Navigate, RouteProps, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "../redux";
+import { Navigate, RouteProps, useNavigate } from "react-router-dom";
 import { ROUTES } from ".";
 import { signOut } from "../usecases/auth";
-import * as authSelectors from "../redux/auth/selectors";
+import { authState, isAuthedSelector } from "../recoil/auth";
 import SideNav from "../components/SideNav";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 
 export const PrivateRoute = ({
   element,
@@ -12,22 +12,28 @@ export const PrivateRoute = ({
   element: RouteProps["element"];
 }) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const isAuthed = useSelector(authSelectors.isAuthed);
+  const isAuthed = useRecoilValue(isAuthedSelector);
+  const setToken = useSetRecoilState(authState);
   const items = useMemo(
     () => [
       {
         title: "Home",
-        onClick: () => navigate(ROUTES.HOME),
+        onClick: () => {
+          navigate(ROUTES.HOME);
+        },
       },
       {
         title: "Sign out",
-        onClick: () => {
-          signOut(dispatch, () => navigate(ROUTES.SIGN_IN));
+        onClick: async () => {
+          const res = await signOut();
+          if (!(res instanceof Error)) {
+            setToken("");
+            navigate(ROUTES.SIGN_IN);
+          }
         },
       },
     ],
-    [dispatch, navigate]
+    [navigate, setToken]
   );
   return isAuthed ? (
     <>

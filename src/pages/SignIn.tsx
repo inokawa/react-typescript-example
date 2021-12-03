@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "../redux";
 import { css } from "linaria";
 import { useFormik } from "formik";
 import Button from "../components/Button";
 import Form from "../components/Form";
 import { signIn } from "../usecases/auth";
 import { ROUTES } from "../routes/";
+import { useSetRecoilState } from "recoil";
+import { authState } from "../recoil";
 
 const wrapperStyle = css`
   display: flex;
@@ -24,16 +25,18 @@ const style = css`
 
 const Page = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const setToken = useSetRecoilState(authState);
   const formik = useFormik({
     initialValues: {
       name: "",
       password: "",
     },
-    onSubmit: (values) => {
-      signIn(dispatch, values.name, values.password, () => {
+    onSubmit: async (values) => {
+      const res = await signIn(values.name, values.password);
+      if (!(res instanceof Error)) {
+        setToken(res);
         navigate(ROUTES.HOME);
-      });
+      }
     },
   });
   return (

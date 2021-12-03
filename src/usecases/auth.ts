@@ -1,6 +1,3 @@
-import * as actions from "../redux/auth/actions";
-import { AppDispatch } from "../redux/types";
-
 const dummySignInApi = (request: {
   name: string;
   password: string;
@@ -21,32 +18,27 @@ const dummySignOutApi = (request: any): Promise<void> => {
 };
 
 export const signIn = async (
-  dispatch: AppDispatch,
   name: string,
-  password: string,
-  onSuccess: () => void
-) => {
+  password: string
+): Promise<string | Error> => {
   try {
-    dispatch(actions.signInRequest());
     const token = await dummySignInApi({ name, password });
-    dispatch(actions.signInSucceed(token));
-    onSuccess();
+    return token;
   } catch (e) {
     if (e instanceof Error) {
-      dispatch(actions.signInFailed(e));
+      return e;
     }
+    return new Error(e as any);
   }
 };
 
-export const signOut = async (dispatch: AppDispatch, onSuccess: () => void) => {
+export const signOut = async (): Promise<void | Error> => {
   try {
-    dispatch(actions.signOutRequest());
     await dummySignOutApi({});
-    dispatch(actions.signOutSuceed());
-    onSuccess();
   } catch (e) {
     if (e instanceof Error) {
-      dispatch(actions.signOutFailed(e));
+      return e;
     }
+    return new Error(e as any);
   }
 };

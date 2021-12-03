@@ -1,13 +1,10 @@
 import React from "react";
-import { Provider } from "react-redux";
+import { RecoilRoot } from "recoil";
 import { BrowserRouter as Router } from "react-router-dom";
 import { css } from "linaria";
 
 import "./App.css";
-import { configureStore } from "./redux";
 import Routes from "./routes/Routes";
-
-const store = configureStore();
 
 const style = css`
   display: flex;
@@ -19,13 +16,13 @@ const Wrapper = (props: { children: React.ReactNode }) => {
 
 const App = () => {
   return (
-    <Provider store={store}>
+    <RecoilRoot>
       <Wrapper>
         <Router>
           <Routes />
         </Router>
       </Wrapper>
-    </Provider>
+    </RecoilRoot>
   );
 };
 
