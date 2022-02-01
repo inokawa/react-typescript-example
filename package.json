@@ -14,7 +14,7 @@
     "tsc": "tsc -p . --noEmit"
   },
   "dependencies": {
-    "core-js": "3.12.1",
+    "core-js": "3.21.0",
     "formik": "2.2.9",
     "linaria": "2.0.2",
     "react": "17.0.1",
