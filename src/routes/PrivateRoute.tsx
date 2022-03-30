@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Navigate, RouteProps, useNavigate } from "react-router-dom";
 import { ROUTES } from ".";
 import { signOut } from "../usecases/auth";

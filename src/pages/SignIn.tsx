@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { css } from "linaria";
 import { useFormik } from "formik";

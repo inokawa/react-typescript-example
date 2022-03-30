@@ -1,4 +1,3 @@
-import React from "react";
 // @ts-expect-error FIXME
 import renderer from "react-test-renderer";
 import Button from "./Button";
