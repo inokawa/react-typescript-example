@@ -1,16 +1,16 @@
-const dummySignInApi = (request: {
+const dummySignInApi = (_: {
   name: string;
   password: string;
 }): Promise<string> => {
-  return new Promise((res, rej) => {
+  return new Promise((res) => {
     setTimeout(() => {
       res("dummy");
     }, 1000);
   });
 };
 
-const dummySignOutApi = (request: any): Promise<void> => {
-  return new Promise((res, rej) => {
+const dummySignOutApi = (_: any): Promise<void> => {
+  return new Promise((res) => {
     setTimeout(() => {
       res();
     }, 1000);
