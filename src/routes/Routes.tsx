@@ -1,7 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ROUTES } from "./";
-import SignIn from "../pages/SignIn";
-import Main from "../pages/Main";
+import { Main, SignIn } from "../pages";
 import { PrivateRoute } from "./PrivateRoute";
 
 export default () => {
