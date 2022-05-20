@@ -1,10 +1,12 @@
+const pkg = require("./package.json");
+
 module.exports = {
   sourceType: "unambiguous",
   presets: [
     [
       "@babel/preset-env",
       {
-        corejs: { version: "3.21", proposals: true },
+        corejs: { version: pkg.dependencies["core-js"], proposals: true },
         useBuiltIns: "usage",
         shippedProposals: true,
       },
