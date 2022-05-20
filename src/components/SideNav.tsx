@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 
-type Props = {
+export type SideNavProps = {
   items: { title: string; onClick: () => void }[];
 };
 
@@ -8,7 +8,7 @@ const style = css`
   width: 200px;
 `;
 
-const Component = (props: Props) => (
+export const SideNav = (props: SideNavProps) => (
   <div className={style}>
     {props.items.map((item) => (
       <div key={item.title} onClick={item.onClick}>
@@ -17,5 +17,3 @@ const Component = (props: Props) => (
     ))}
   </div>
 );
-
-export default Component;

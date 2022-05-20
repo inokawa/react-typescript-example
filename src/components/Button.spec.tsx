@@ -1,7 +1,7 @@
 import { it, expect } from "@jest/globals";
 
 import { render, fireEvent, screen } from "@testing-library/react";
-import Button from "./Button";
+import { Button } from "./Button";
 
 it("sample", () => {
   // eslint-disable-next-line @typescript-eslint/no-empty-function

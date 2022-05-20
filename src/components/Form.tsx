@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 
-type Props = {
+export type FormProps = {
   label: string;
   name: string;
   type: React.InputHTMLAttributes<HTMLInputElement>["type"];
@@ -19,7 +19,7 @@ const inputStyle = css`
   margin: 10px;
 `;
 
-const Component = ({ label, name, type, value, onChange }: Props) => (
+export const Form = ({ label, name, type, value, onChange }: FormProps) => (
   <div className={style}>
     <label htmlFor={name}>{label}</label>
     <input
@@ -31,5 +31,3 @@ const Component = ({ label, name, type, value, onChange }: Props) => (
     />
   </div>
 );
-
-export default Component;

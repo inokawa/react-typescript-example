@@ -3,7 +3,7 @@ import { Navigate, RouteProps, useNavigate } from "react-router-dom";
 import { ROUTES } from ".";
 import { signOut } from "../usecases/auth";
 import { authState, isAuthedSelector } from "../recoil/auth";
-import SideNav from "../components/SideNav";
+import { SideNav } from "../components/SideNav";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 
 export const PrivateRoute = ({

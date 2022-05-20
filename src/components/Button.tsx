@@ -1,10 +1,8 @@
-type Props = {
+export type ButtonProps = {
   title: string;
   onClick: () => void;
 };
 
-const Component = ({ title, onClick }: Props) => (
+export const Button = ({ title, onClick }: ButtonProps) => (
   <button onClick={onClick}>{title}</button>
 );
-
-export default Component;
