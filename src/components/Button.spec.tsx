@@ -8,7 +8,7 @@ it("sample", () => {
   let clicked = false;
   const { asFragment } = render(
     <Button
-      title="test"
+      label="test"
       onClick={() => {
         clicked = true;
       }}

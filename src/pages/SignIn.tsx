@@ -55,7 +55,7 @@ const Page = () => {
           onChange={formik.handleChange}
           value={formik.values.password}
         />
-        <Button onClick={formik.submitForm} title="Sign in" />
+        <Button onClick={formik.submitForm} label="Sign in" />
       </div>
     </div>
   );
