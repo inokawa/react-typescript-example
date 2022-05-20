@@ -17,7 +17,7 @@ const App = () => {
   return (
     <RecoilRoot>
       <Wrapper>
-        <Router>
+        <Router basename={(process.env as any).BASENAME}>
           <Routes />
         </Router>
       </Wrapper>
