@@ -1,11 +1,21 @@
 import { it, expect } from "@jest/globals";
 
-// @ts-expect-error FIXME
-import renderer from "react-test-renderer";
+import { render, fireEvent, screen } from "@testing-library/react";
 import Button from "./Button";
 
 it("sample", () => {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const component = renderer.create(<Button title="test" onClick={() => {}} />);
-  expect(component.toJSON()).toMatchSnapshot();
+  let clicked = false;
+  const { asFragment } = render(
+    <Button
+      title="test"
+      onClick={() => {
+        clicked = true;
+      }}
+    />
+  );
+  expect(asFragment()).toMatchSnapshot();
+
+  fireEvent.click(screen.getByText("test"));
+  expect(clicked).toBe(true);
 });
