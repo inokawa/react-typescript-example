@@ -1,3 +1,5 @@
+import { it, expect } from "@jest/globals";
+
 // @ts-expect-error FIXME
 import renderer from "react-test-renderer";
 import Button from "./Button";
