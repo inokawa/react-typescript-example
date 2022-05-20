@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const path = require("path");
 
@@ -9,9 +8,6 @@ const common = {
       inject: true,
       template: path.join(__dirname, "public", "index.html"),
       favicon: path.join(__dirname, "public", "favicon.ico"),
-    }),
-    new MiniCssExtractPlugin({
-      filename: "styles.css",
     }),
   ],
   entry: "./src",
@@ -34,27 +30,11 @@ const common = {
               cacheDirectory: true,
             },
           },
-          {
-            loader: "linaria/loader",
-            options: {
-              sourceMap: process.env.NODE_ENV !== "production",
-            },
-          },
         ],
       },
       {
         test: /\.css/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: process.env.NODE_ENV !== "production",
-            },
-          },
-        ],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,

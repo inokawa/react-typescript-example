@@ -1,4 +1,4 @@
-import { css } from "linaria";
+import { css } from "@emotion/css";
 import logo from "../logo.svg";
 
 const style = css`

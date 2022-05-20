@@ -1,6 +1,6 @@
 import { RecoilRoot } from "recoil";
 import { BrowserRouter as Router } from "react-router-dom";
-import { css } from "linaria";
+import { css } from "@emotion/css";
 
 import "./App.css";
 import Routes from "./routes/Routes";
