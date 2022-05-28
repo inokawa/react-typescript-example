@@ -12,6 +12,7 @@
     "format": "prettier '**/*.{js,jsx,ts,tsx}' --write",
     "format:ci": "prettier '**/*.{js,jsx,ts,tsx}' --list-different",
     "tsc": "tsc -p . --noEmit",
+    "screenshot": "storycap --serverCmd 'npm run storybook' http://localhost:6006 --serverTimeout 3000000",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -55,6 +56,7 @@
     "jest": "28.1.0",
     "jest-environment-jsdom": "28.1.0",
     "prettier": "2.4.1",
+    "storycap": "3.1.8",
     "style-loader": "3.3.1",
     "ts-jest": "28.0.3",
     "typescript": "4.5.5",
