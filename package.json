@@ -26,8 +26,8 @@
     "recoil": "^0.7.2"
   },
   "devDependencies": {
-    "@babel/core": "7.18.0",
-    "@babel/preset-env": "7.18.0",
+    "@babel/core": "7.18.2",
+    "@babel/preset-env": "7.18.2",
     "@babel/preset-react": "7.17.12",
     "@babel/preset-typescript": "7.17.12",
     "@storybook/addon-actions": "^6.5.3",
