@@ -1,5 +1,4 @@
 {
-  "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -14,7 +13,19 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "sourceMap": true
+    "sourceMap": true,
+    // https://github.com/tsconfig/bases/blob/main/bases/strictest.json
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "importsNotUsedAsValues": "error"
   },
   "include": ["src"]
 }
