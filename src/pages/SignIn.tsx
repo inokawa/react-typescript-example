@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { css } from "@emotion/css";
 import { useFormik } from "formik";
 import { Button } from "../components/Button";
 import { Form } from "../components/Form";
@@ -7,20 +6,7 @@ import { signIn } from "../usecases/auth";
 import { ROUTES } from "../routes/";
 import { useSetRecoilState } from "recoil";
 import { authState } from "../recoil";
-
-const wrapperStyle = css`
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-`;
-
-const style = css`
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-`;
+import { innerStyle, wrapperStyle } from "./SignIn.css";
 
 const Page = () => {
   const navigate = useNavigate();
@@ -40,7 +26,7 @@ const Page = () => {
   });
   return (
     <div className={wrapperStyle}>
-      <div className={style}>
+      <div className={innerStyle}>
         <Form
           label="name"
           name="name"

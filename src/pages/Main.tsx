@@ -1,14 +1,9 @@
-import { css } from "@emotion/css";
 import logo from "../logo.svg";
-
-const style = css`
-  flex: 1;
-  text-align: center;
-`;
+import { wrapper } from "./Main.css";
 
 const Page = () => {
   return (
-    <div className={style}>
+    <div className={wrapper}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
