@@ -28,6 +28,7 @@ jobs:
       - run: yarn install
       - run: yarn tsc
       - run: yarn lint:ci
+      - run: yarn stylelint:ci
       - run: yarn format:ci
       - run: yarn test
       - run: yarn screenshot
