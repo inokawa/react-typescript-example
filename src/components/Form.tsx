@@ -1,4 +1,4 @@
-import { inputStyle, wrapperStyle } from "./From.css";
+import { css } from "@emotion/css";
 
 export type FormProps = {
   label: string;
@@ -8,8 +8,19 @@ export type FormProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
+const style = css`
+  display: flex;
+  flex: 1;
+  align-items: center;
+`;
+
+const inputStyle = css`
+  flex: 1;
+  margin: 10px;
+`;
+
 export const Form = ({ label, name, type, value, onChange }: FormProps) => (
-  <div className={wrapperStyle}>
+  <div className={style}>
     <label htmlFor={name}>{label}</label>
     <input
       className={inputStyle}

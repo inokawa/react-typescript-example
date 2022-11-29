@@ -4,27 +4,22 @@ const path = require("path");
 
 const pkg = require("./package.json");
 
-const { VanillaExtractPlugin } = require("@vanilla-extract/webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 const plugins = [
   new HtmlWebpackPlugin({
     inject: true,
     template: path.join(__dirname, "public", "index.html"),
     favicon: path.join(__dirname, "public", "favicon.ico"),
   }),
-  new VanillaExtractPlugin(),
-  new MiniCssExtractPlugin({
-    filename: "styles.css",
-  }),
-  new webpack.DefinePlugin({
-    "process.env.BASENAME": JSON.stringify(
-      process.env.ENV === "GH_PAGES"
-        ? pkg.homepage.replace(/^.+\.github\.io/, "").replace(/\/$/, "")
-        : ""
-    ),
-  }),
 ];
+if (process.env.ENV === "GH_PAGES") {
+  plugins.push(
+    new webpack.DefinePlugin({
+      "process.env.BASENAME": JSON.stringify(
+        pkg.homepage.replace(/^.+\.github\.io/, "").replace(/\/$/, "")
+      ),
+    })
+  );
+}
 
 const common = {
   plugins,
@@ -51,16 +46,8 @@ const common = {
         ],
       },
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              url: false,
-            },
-          },
-        ],
+        test: /\.css/,
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,

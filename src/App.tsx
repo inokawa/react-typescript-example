@@ -1,12 +1,16 @@
 import { RecoilRoot } from "recoil";
 import { BrowserRouter as Router } from "react-router-dom";
+import { css } from "@emotion/css";
 
-import "./style.css";
+import "./App.css";
 import Routes from "./routes/Routes";
-import { wrapper } from "./App.css";
+
+const style = css`
+  display: flex;
+`;
 
 const Wrapper = (props: { children: React.ReactNode }) => {
-  return <div className={wrapper}>{props.children}</div>;
+  return <div className={style}>{props.children}</div>;
 };
 
 const App = () => {
