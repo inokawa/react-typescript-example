@@ -13,23 +13,29 @@ jobs:
         with:
           node-version: "lts/*"
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v2
-        id: yarn-cache
+      - uses: pnpm/action-setup@v2
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          version: 7
 
-      - run: yarn install
-      - run: yarn tsc
-      - run: yarn lint:ci
-      - run: yarn stylelint:ci
-      - run: yarn format:ci
-      - run: yarn test
-      - run: yarn screenshot
-      - run: yarn build
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm tsc
+      - run: pnpm lint:ci
+      - run: pnpm stylelint:ci
+      - run: pnpm format:ci
+      - run: pnpm test
+      - run: pnpm screenshot
+      - run: pnpm build
