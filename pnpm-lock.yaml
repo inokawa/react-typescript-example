@@ -109,8 +109,8 @@ devDependencies:
     specifier: 4.6.0
     version: 4.6.0(eslint@8.8.0)
   html-webpack-plugin:
-    specifier: 5.5.0
-    version: 5.5.0(webpack@5.76.0)
+    specifier: 5.5.1
+    version: 5.5.1(webpack@5.76.0)
   jest:
     specifier: 29.4.1
     version: 29.4.1(@types/node@17.0.35)
@@ -2857,7 +2857,7 @@ packages:
       fork-ts-checker-webpack-plugin: 6.5.2(eslint@8.8.0)(typescript@4.5.5)(webpack@5.76.0)
       glob: 7.2.3
       glob-promise: 3.4.0(glob@7.2.3)
-      html-webpack-plugin: 5.5.0(webpack@5.76.0)
+      html-webpack-plugin: 5.5.1(webpack@5.76.0)
       path-browserify: 1.0.1
       process: 0.11.10
       react: 18.2.0
@@ -3383,7 +3383,7 @@ packages:
       express: 4.17.1
       find-up: 5.0.0
       fs-extra: 9.1.0
-      html-webpack-plugin: 5.5.0(webpack@5.76.0)
+      html-webpack-plugin: 5.5.1(webpack@5.76.0)
       node-fetch: 2.6.7
       process: 0.11.10
       react: 18.2.0
@@ -7747,7 +7747,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -8283,8 +8283,8 @@ packages:
       webpack: 4.46.0(webpack-cli@4.9.2)
     dev: true
 
-  /html-webpack-plugin@5.5.0(webpack@5.76.0):
-    resolution: {integrity: sha512-sy88PC2cRTVxvETRgUHFrL4No3UxvcH8G1NepGhqaTT+GXN2kTamqasot0inS5hXeg1cMbFDt27zzo9p35lZVw==}
+  /html-webpack-plugin@5.5.1(webpack@5.76.0):
+    resolution: {integrity: sha512-cTUzZ1+NqjGEKjmVgZKLMdiFg3m9MdRXkZW2OEe69WYVi5ONLMmlnSZdXzGGMOq0C8jGDrL6EWyEDDUioHO/pA==}
     engines: {node: '>=10.13.0'}
     peerDependencies:
       webpack: ^5.20.0
