@@ -3,7 +3,7 @@ module.exports = {
   overrides: [
     {
       files: ["src/**/*.{js,jsx,ts,tsx}"],
-      customSyntax: "@stylelint/postcss-css-in-js",
+      customSyntax: "postcss-styled-syntax",
       rules: {
         "no-empty-first-line": null,
       },
