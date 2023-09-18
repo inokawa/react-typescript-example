@@ -15,9 +15,9 @@ if (process.env.ENV === "GH_PAGES") {
   plugins.push(
     new webpack.DefinePlugin({
       "process.env.BASENAME": JSON.stringify(
-        pkg.homepage.replace(/^.+\.github\.io/, "").replace(/\/$/, "")
+        pkg.homepage.replace(/^.+\.github\.io/, "").replace(/\/$/, ""),
       ),
-    })
+    }),
   );
 }
 

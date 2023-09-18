@@ -19,6 +19,7 @@ const App = () => {
       <Wrapper>
         <Router
           basename={
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (typeof process === "undefined" ? "" : (process.env as any))
               .BASENAME
           }

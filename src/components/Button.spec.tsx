@@ -12,7 +12,7 @@ it("sample", () => {
       onClick={() => {
         clicked = true;
       }}
-    />
+    />,
   );
   expect(asFragment()).toMatchSnapshot();
 

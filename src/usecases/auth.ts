@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const dummySignInApi = (_: {
   name: string;
   password: string;
@@ -9,6 +10,7 @@ const dummySignInApi = (_: {
   });
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
 const dummySignOutApi = (_: any): Promise<void> => {
   return new Promise((res) => {
     setTimeout(() => {
@@ -19,7 +21,7 @@ const dummySignOutApi = (_: any): Promise<void> => {
 
 export const signIn = async (
   name: string,
-  password: string
+  password: string,
 ): Promise<string | Error> => {
   try {
     const token = await dummySignInApi({ name, password });
@@ -28,6 +30,7 @@ export const signIn = async (
     if (e instanceof Error) {
       return e;
     }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return new Error(e as any);
   }
 };
@@ -39,6 +42,7 @@ export const signOut = async (): Promise<void | Error> => {
     if (e instanceof Error) {
       return e;
     }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return new Error(e as any);
   }
 };

@@ -33,7 +33,7 @@ export const PrivateRoute = ({
         },
       },
     ],
-    [navigate, setToken]
+    [navigate, setToken],
   );
   return isAuthed ? (
     <>
