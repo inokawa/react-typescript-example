@@ -1,4 +1,3 @@
-import { RecoilRoot } from "recoil";
 import { BrowserRouter as Router } from "react-router-dom";
 import { css } from "@emotion/css";
 
@@ -15,19 +14,16 @@ const Wrapper = (props: { children: React.ReactNode }) => {
 
 const App = () => {
   return (
-    <RecoilRoot>
-      <Wrapper>
-        <Router
-          basename={
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (typeof process === "undefined" ? "" : (process.env as any))
-              .BASENAME
-          }
-        >
-          <Routes />
-        </Router>
-      </Wrapper>
-    </RecoilRoot>
+    <Wrapper>
+      <Router
+        basename={
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (typeof process === "undefined" ? "" : (process.env as any)).BASENAME
+        }
+      >
+        <Routes />
+      </Router>
+    </Wrapper>
   );
 };
 

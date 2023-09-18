@@ -2,9 +2,9 @@ import { useMemo } from "react";
 import { Navigate, RouteProps, useNavigate } from "react-router-dom";
 import { ROUTES } from ".";
 import { signOut } from "../usecases/auth";
-import { authState, isAuthedSelector } from "../recoil/auth";
+import { authState, isAuthedSelector } from "../store/auth";
 import { SideNav } from "../components/SideNav";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useAtomValue, useSetAtom } from "jotai";
 
 export const PrivateRoute = ({
   element,
@@ -12,8 +12,8 @@ export const PrivateRoute = ({
   element: RouteProps["element"];
 }) => {
   const navigate = useNavigate();
-  const isAuthed = useRecoilValue(isAuthedSelector);
-  const setToken = useSetRecoilState(authState);
+  const isAuthed = useAtomValue(isAuthedSelector);
+  const setToken = useSetAtom(authState);
   const items = useMemo(
     () => [
       {

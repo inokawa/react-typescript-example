@@ -5,8 +5,8 @@ import { Button } from "../components/Button";
 import { Form } from "../components/Form";
 import { signIn } from "../usecases/auth";
 import { ROUTES } from "../routes/";
-import { useSetRecoilState } from "recoil";
-import { authState } from "../recoil";
+import { useSetAtom } from "jotai";
+import { authState } from "../store";
 
 const wrapperStyle = css`
   display: flex;
@@ -24,7 +24,7 @@ const style = css`
 
 const Page = () => {
   const navigate = useNavigate();
-  const setToken = useSetRecoilState(authState);
+  const setToken = useSetAtom(authState);
   const formik = useFormik({
     initialValues: {
       name: "",
