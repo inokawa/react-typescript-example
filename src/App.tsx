@@ -17,7 +17,12 @@ const App = () => {
   return (
     <RecoilRoot>
       <Wrapper>
-        <Router basename={(process.env as any).BASENAME}>
+        <Router
+          basename={
+            (typeof process === "undefined" ? "" : (process.env as any))
+              .BASENAME
+          }
+        >
           <Routes />
         </Router>
       </Wrapper>

@@ -1,6 +1,4 @@
-import { withScreenshot } from "storycap";
-
-export const decorators = [withScreenshot];
+export const decorators = [];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

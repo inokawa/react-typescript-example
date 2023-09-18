@@ -4,10 +4,9 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "storycap",
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-webpack5",
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
   },
 };
