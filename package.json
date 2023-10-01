@@ -18,7 +18,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@emotion/css": "11.9.0",
+    "@emotion/css": "11.11.2",
     "core-js": "3.32.2",
     "formik": "2.4.5",
     "jotai": "^2.4.2",
