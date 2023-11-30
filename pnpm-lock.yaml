@@ -9,8 +9,8 @@ dependencies:
     specifier: 11.11.2
     version: 11.11.2
   core-js:
-    specifier: 3.32.2
-    version: 3.32.2
+    specifier: 3.33.3
+    version: 3.33.3
   formik:
     specifier: 2.4.5
     version: 2.4.5(react@18.2.0)
@@ -6048,8 +6048,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /core-js@3.32.2:
-    resolution: {integrity: sha512-pxXSw1mYZPDGvTQqEc5vgIb83jGQKFGYWY76z4a7weZXUolw3G+OvpZqSRcfYOoOVUQJYEPsWeQK8pKEnUtWxQ==}
+  /core-js@3.33.3:
+    resolution: {integrity: sha512-lo0kOocUlLKmm6kv/FswQL8zbkH7mVsLJ/FULClOhv8WRVmKLVcs6XPNQAzstfeJTCHMyButEwG+z1kHxHoDZw==}
     requiresBuild: true
     dev: false
 
