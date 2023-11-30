@@ -41,7 +41,7 @@
     "@storybook/testing-library": "0.2.2",
     "@testing-library/react": "13.4.0",
     "@tsconfig/strictest": "2.0.2",
-    "@types/node": "20.8.10",
+    "@types/node": "20.10.1",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
     "@typescript-eslint/eslint-plugin": "6.7.3",
