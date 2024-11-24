@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
@@ -6,7 +6,10 @@ module.exports = {
     "@storybook/addon-interactions",
   ],
   framework: {
-    name: "@storybook/react-webpack5",
+    name: "@storybook/react-vite",
     options: {},
+  },
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
   },
 };
