@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Navigate, RouteProps, useNavigate } from "react-router-dom";
+import { Navigate, RouteProps, useNavigate } from "react-router";
 import { ROUTES } from ".";
 import { signOut } from "../usecases/auth";
 import { authState, isAuthedSelector } from "../store/auth";
